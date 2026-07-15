@@ -34,3 +34,22 @@ go build -v .
 # 运行
 go run .
 ```
+
+## curl 使用
+
+- 参数
+  
+```lua
+-X/--request [GET|POST] 指定请求的HTTP方法
+-H/--header 指定请求的 HTTP Header
+-d/--date 指定请求的 HTTP 消息体 (Body)
+-v/--verbose 输出详细的返回信息
+-u/--user 指定账号，密码
+-b/--cookie 读取 cookie
+```
+
+- 示例
+  
+```bash
+curl -v -XPOST -H "Content-Type:application/json" http://127.0.0.1:8080/user -d '{"username": "admin", "password": "admin1234"}'
+```
