@@ -28,6 +28,8 @@ func Init(cfg string) error {
 	return nil
 }
 
+// 定义 Config 对象自己的一个初始化方法，
+// 并且这个方法可以修改 Config 本身，所以使用指针接收者
 func (c *Config) initConfig() error {
 	if c.Name != "" {
 		viper.SetConfigFile(c.Name) // 如果指定了配置文件，则解析指定的配置文件
@@ -35,6 +37,7 @@ func (c *Config) initConfig() error {
 		viper.AddConfigPath("conf") // 如果没有指定配置文件，则解析默认的配置文件
 		viper.SetConfigName("config")
 	}
+
 	viper.SetConfigType("yaml")     // 设置配置文件格式为YAML
 	viper.AutomaticEnv()            // 读取匹配的环境变量
 	viper.SetEnvPrefix("APISERVER") // 读取环境变量的前缀为APISERVER

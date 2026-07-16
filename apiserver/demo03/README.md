@@ -20,7 +20,7 @@ go get github.com/zxmrlc/log
 
 1. 修改 【go.mod】文件, 使用 replace 命令
 
-```lua
+```go.mod
 module apiserver
 
 go 1.24
@@ -32,15 +32,14 @@ require (
 replace github.com/lexkong/log => github.com/zxmrlc/log
 ```
 
-2. 执行命令
+1. 执行命令
 
 ```bash
 go mod tidy
 ```
 
-3. 或者Linux/Mac命令
+1. 或者Linux/Mac命令
 
-   
 ```bash
 # -r (recursive) [递归查找]
 # -l (list files) [只输出文件名]
@@ -51,4 +50,43 @@ go mod tidy
 # 's#github.com/lexkong/log#github.com/zxmrlc/log#g': 替换表达式,  s#旧内容#新内容#g
 #  s: (substitute) [替换]， g: (global) [全部替换], 如果没有g,只替换第一个
 grep -rl "github.com/lexkong/log" . | xargs sed -i '' 's#github.com/lexkong/log#github.com/zxmrlc/log#g'
+```
+
+## go语法示意
+
+1. `func log.InitWithConfig(passLagerDef *log.PassLagerCfg) error` 为什么函数喜欢接收指针?
+
+- 避免复制大结构体
+- 函数可以修改原变量
+  
+```go
+func change(cfg *Config){
+    cfg.Name = "new"
+}
+```
+
+- 可以表达“没有值”
+  
+```go
+# 这样调用
+change(nil)
+```
+
+1. 1是go中常见的模式
+
+```go
+user := User{
+    Name: "Tom",
+}
+service.Create(&user)
+
+// 语法 := 等价于 下面这种使用方式
+var passLagerCfg log.PassLagerCfg 
+passLagerCfg = log.PassLagerCfg{}
+
+
+// 但是 := 只能在 函数内部 使用
+func main(){
+    cfg := Config{}
+}
 ```
