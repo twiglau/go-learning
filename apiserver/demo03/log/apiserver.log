@@ -1,0 +1,6 @@
+{"level":"INFO","timestamp":"2026-07-16 20:42:52.218","file":"demo03/main.go:55","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2026-07-16 20:42:52.222","file":"demo03/main.go:52","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2026-07-16 20:44:00.437","file":"config/config.go:72","msg":"Config file changed: /Users/feiya/Desktop/Project/go-learning/apiserver/demo03/conf/config.yaml"}
+{"level":"INFO","timestamp":"2026-07-16 20:44:00.900","file":"config/config.go:72","msg":"Config file changed: /Users/feiya/Desktop/Project/go-learning/apiserver/demo03/conf/config.yaml"}
+{"level":"INFO","timestamp":"2026-07-16 20:44:17.348","file":"config/config.go:72","msg":"Config file changed: /Users/feiya/Desktop/Project/go-learning/apiserver/demo03/conf/config.yaml"}
+{"level":"INFO","timestamp":"2026-07-16 20:44:17.784","file":"config/config.go:72","msg":"Config file changed: /Users/feiya/Desktop/Project/go-learning/apiserver/demo03/conf/config.yaml"}
