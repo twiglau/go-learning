@@ -8,8 +8,9 @@ import (
 	"apiserver/config"
 	"apiserver/router"
 
+	"github.com/zxmrlc/log"
+
 	"github.com/gin-gonic/gin"
-	"github.com/lexkong/log"
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
 )

@@ -4,8 +4,8 @@ import (
 	"strings"
 
 	"github.com/fsnotify/fsnotify"
-	"github.com/lexkong/log"
 	"github.com/spf13/viper"
+	"github.com/zxmrlc/log"
 )
 
 type Config struct {

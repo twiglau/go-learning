@@ -14,6 +14,10 @@ import (
 	"github.com/spf13/viper"
 )
 
+// 定义配置参数
+// 定义启动参数: -c, --config
+// 例如命令行： go run . -c config.yaml
+// 获取： -c config.yaml
 var (
 	cfg = pflag.StringP("config", "c", "", "apiserver config file path.")
 )
